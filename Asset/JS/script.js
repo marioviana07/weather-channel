@@ -13,10 +13,10 @@ function initialize() {
         showPrevious();
         getCurrent(currentLoc);
     } else {
-        //try to geolocate, otherwise set city to raleigh
+
         if (!navigator.geolocation) {
-            //can't geolocate and no previous searches, so just give them one
-            getCurrent("Raleigh");
+            //just give them city
+            getCurrent("Dallas");
         } else {
             navigator.geolocation.getCurrentPosition(success, error);
         }
@@ -27,7 +27,7 @@ function initialize() {
 function success(position) {
     var lat = position.coords.latitude;
     var lon = position.coords.longitude;
-    var queryURL = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&APPID=363a2d5dd4724198444983c5583cb689";
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&APPID=61b327caa0060f2c70512d32e0a5e53d";
     $.ajax({
         url: queryURL,
         method: "GET"
@@ -40,8 +40,8 @@ function success(position) {
 }
 
 function error() {
-    //can't geolocate and no previous searches, so just give them one
-    currentLoc = "Raleigh"
+
+    currentLoc = "Dallas"
     getCurrent(currentLoc);
 }
 
