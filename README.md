@@ -1,4 +1,4 @@
 # Weather Channel!!!
 By Mario Viana
 ## Mock-up
-<img src = "./image/weather.png" width = "200" >
+<img src = "Asset/image/weather.png" width = "200" >
