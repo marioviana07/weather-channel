@@ -1,6 +1,6 @@
 var savedLocations = [];
 var currentLoc;
-const clearEl = document.getElementById("clear");
+
 
 function initialize() {
     //grab previous locations from local storage
@@ -206,11 +206,6 @@ $("#searchbtn").on("click", function() {
         //get the new forecast
         getCurrent(loc);
     }
-
-    clearEl.addEventListener("click", function() {
-        searchinput = [];
-        rendersearchinput();
-    })
 
 });
 
